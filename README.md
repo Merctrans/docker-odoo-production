@@ -24,7 +24,8 @@ docker-compose down -v
 docker exec -it web-odoo bash -c "odoo shell -d odoo"
 ```
 ## How to include your module in odoo docker for production 
-``` Simply put the folder of your local add-ons into the "local-addons" folder ```
+Simply put the folder of your local add-ons into the "local-addons" folder
+
 ## Odoo container Bash
 Connect Postgres in docker 
 ```
