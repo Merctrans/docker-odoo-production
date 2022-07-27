@@ -1,0 +1,64 @@
+version: "3.1"
+services:
+  web:
+    image: odoo:15
+    container_name: web-odoo
+    depends_on:
+      - db
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./local-addons:/mnt/extra-addons
+    environment:
+      - USER=odoo
+      - PASSWORD=odoo
+    networks:
+      - odoo
+  db:
+    image: postgres:13
+    container_name: db-odoo
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data/pgdata
+    networks:
+      - odoo
+  pgadmin:
+    container_name: pgadmin-odoo
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: amdin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+       - pgadmin:/var/lib/pgadmin
+    ports:
+      - 5433:80
+    networks:
+      - postgres
+    restart: unless-stopped
+  proxy:
+    container_name: proxy-odoo
+    depends_on:
+            - web
+    container_name: odoo_proxy
+    build:
+        context: .
+        dockerfile: Dockerfile-nginx
+    ports:
+        - "8069:8069"
+    networks:
+      - odoo
+
+networks:
+  odoo:
+    driver: bridge
+
+
+volumes:
+  odoo-web-data:
+  odoo-db-data:
+  pgadmin:

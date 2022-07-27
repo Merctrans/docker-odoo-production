@@ -1,0 +1,8 @@
+FROM nginx:latest
+
+COPY /config/odoo-nginx.conf /etc/nginx/conf.d/
+
+RUN rm /etc/nginx/conf.d/default.conf
+
+# Expose 8069 port, in which the users will interact with odoo services
+EXPOSE 8069
