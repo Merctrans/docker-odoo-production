@@ -1,7 +1,7 @@
 # Merctrans Project Manager 
 
 
-## All service
+## All services
 - odoo 15 - Change version in docker-compose if you want. Example: odoo:14
 - postgres 13
 - pgadmin4 - Manage your postgres odoo database
@@ -22,8 +22,8 @@ psql -U odoo odoo
 ```
 ## pgadmin4 - Manage your odoo database in browser
 connect pgadmin4 - port 5433 **localhost:5433**
-**Create new server** 
-Name your server then modify in **Connection** tab
-hostname/address : db 
-username: odoo
-password: odoo
+**Create new server** \
+Name your server then modify in **Connection** tab \
+hostname/address : db \
+username: odoo \
+password: odoo \
