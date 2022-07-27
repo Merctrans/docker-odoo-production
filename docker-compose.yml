@@ -38,7 +38,7 @@ services:
     ports:
       - 5433:80
     networks:
-      - postgres
+      - odoo
     restart: unless-stopped
   proxy:
     container_name: proxy-odoo
