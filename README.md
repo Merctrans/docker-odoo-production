@@ -28,7 +28,7 @@ docker exec -it web-odoo bash -c "odoo shell -d odoo"
 Connect Postgres in docker 
 ```
 docker exec -it web-odoo bash
-# Sau khi connect duoc vao bash cua odoo service
+# psql in container
 psql -U odoo odoo
 
 ```
