@@ -1,6 +1,4 @@
-# Merctrans Project Manager 
-
-
+# Docker Odoo Production
 ## All services
 - odoo 15 - Change version in docker-compose if you want. Example: odoo:14
 - postgres 13
