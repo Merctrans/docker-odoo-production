@@ -36,7 +36,7 @@ services:
     volumes:
        - pgadmin-mercdev:/var/lib/pgadmin-mercdev
     ports:
-      - 15433:80
+      - 12433:80
     networks:
       - odoo-mercdev
     restart: unless-stopped
@@ -49,7 +49,7 @@ services:
         context: .
         dockerfile: Dockerfile-nginx
     ports:
-        - "18069:8069"
+        - "12069:8069"
     networks:
       - odoo-mercdev
 
