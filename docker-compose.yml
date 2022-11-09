@@ -54,7 +54,7 @@ services:
       - odoo-mercdev
 
 networks:
-  odoo:
+  odoo-mercdev:
     driver: bridge
 
 
