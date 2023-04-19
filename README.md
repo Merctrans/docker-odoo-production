@@ -1,6 +1,6 @@
 # Docker Odoo Production
 ## All services
-- odoo 15 - Change version in docker-compose if you want. Example: odoo:14
+- odoo 16 - Change version in docker-compose if you want. Example: odoo:14
 - postgres 13
 - pgadmin4 - Manage your postgres odoo database
 - nginx - proxy server with config/odoo-nginx.conf
