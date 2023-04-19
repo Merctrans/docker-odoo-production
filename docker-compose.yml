@@ -41,7 +41,6 @@ services:
       - odoo
     restart: unless-stopped
   proxy:
-    container_name: proxy-odoo
     depends_on:
             - web
     container_name: odoo_proxy
