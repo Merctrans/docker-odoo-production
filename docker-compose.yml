@@ -1,8 +1,8 @@
 version: "3.1"
 services:
   web:
-    image: odoo:15
-    container_name: web-odoo
+    image: odoo:16
+    container_name: web-odoo-morons
     depends_on:
       - db
     volumes:
@@ -16,7 +16,7 @@ services:
       - odoo-mercdev
   db:
     image: postgres:13
-    container_name: db-odoo
+    container_name: db-odoo-morns
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=odoo
@@ -27,7 +27,7 @@ services:
     networks:
       - odoo-mercdev
   pgadmin:
-    container_name: pgadmin-odoo
+    container_name: pgadmin-odoo-morons
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: amdin@admin.com
@@ -44,7 +44,6 @@ services:
     container_name: proxy-odoo
     depends_on:
             - web
-    container_name: odoo_proxy
     build:
         context: .
         dockerfile: Dockerfile-nginx
