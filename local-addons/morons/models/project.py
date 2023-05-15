@@ -9,6 +9,7 @@ from odoo import models, fields, api
 
 """
 
+
 class MercTransServices(models.Model):
     _name = 'merctrans.services'
     _rec_name = 'services_names'
@@ -30,11 +31,11 @@ class MerctransProject(models.Model):
                       ('page', 'Page'),
                       ('job', 'Job')]
 
-    project_status_list = [('potential', 'Potential'),
-                           ('confirmed', 'Confirmed'),
-                           ('in progress', 'In Progress'), ('in qa', 'In QA'),
-                           ('delivered', 'Delivered'),
-                           ('canceled', 'Canceled')]
+    # project_status_list = [('potential', 'Potential'),
+    #                        ('confirmed', 'Confirmed'),
+    #                        ('in progress', 'In Progress'), ('in qa', 'In QA'),
+    #                        ('delivered', 'Delivered'),
+    #                        ('canceled', 'Canceled')]
 
     payment_status_list = [('unpaid', 'Unpaid'), ('invoiced', 'Invoiced'),
                            ('paid', 'Paid')]
@@ -60,8 +61,8 @@ class MerctransProject(models.Model):
                                 currency_field='currency_id',
                                 store=True,
                                 readonly=True)
-    project_status = fields.Selection(string='Project Status',
-                                      selection=project_status_list)
+    # project_status = fields.Selection(string='Project Status',
+    #                                   selection=project_status_list)
     payment_status = fields.Selection(string='Payment Status',
                                       selection=payment_status_list)
 
