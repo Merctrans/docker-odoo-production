@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+<!--PROJECT VIEW-->
         <record id="merctrans_project_view_form" model="ir.ui.view">
             <field name="name">merctrans.project.form.view.inherit</field>
             <field name="model">project.project</field>
@@ -40,6 +41,28 @@
                     <field name="sale_rate"/>
                     <field name="discount"/>
                     <field name="job_value"/>
+                    <field name="payment_status"/>
+                </xpath>
+            </field>
+        </record>
+
+<!--project.view_task_form2-->
+<!-- TASK VIEW-->
+        <record id="merctrans_task_view_form" model="ir.ui.view">
+            <field name="name">merctrans.task.form.view.inherit</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_ids']" position="after">
+                    <field name="rate"/>
+                    <field name="service" widget="many2many_tags"/>
+                    <field name="source_language"/>
+                    <field name="target_language"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="volume"/>
+                    <field name="po_value"/>
+                    <field name="po_value"/>
                     <field name="payment_status"/>
                 </xpath>
             </field>

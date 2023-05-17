@@ -66,9 +66,45 @@ class MerctransProject(models.Model):
     payment_status = fields.Selection(string='Payment Status',
                                       selection=payment_status_list)
 
-    @api.onchange('volume', 'rate_per')
     @api.depends('volume', 'sale_rate', 'discount')
     def _compute_job_value(self):
         for project in self:
             project.job_value = (100 - project.discount) / 100 * project.volume * project.sale_rate
 
+
+class MerctransTask(models.Model):
+    _inherit = 'project.task'
+
+    po_status_list = [('in progress', 'In Progress'),
+                      ('completed', 'Completed'),
+                      ('canceled', 'Canceled')]
+
+    work_unit_list = [('word', 'Word'),
+                      ('hour', 'Hour'),
+                      ('page', 'Page'),
+                      ('job', 'Job')]
+
+    payment_status_list = [('unpaid', 'Unpaid'),
+                           ('invoiced', 'Invoiced'),
+                           ('paid', 'Paid')]
+
+    rate = fields.Float(string='Rate', required=True, default=0)
+    service = fields.Many2many('merctrans.services')
+    source_language = fields.Many2one('res.lang', string='Source Language')
+    target_language = fields.Many2one('res.lang', string='Target Language')
+    volume = fields.Integer(string='Volume*', required=True, default=0)
+    po_value = fields.Float("PO Value",
+                            compute="_compute_po_value",
+                            store=True,
+                            readonly=True,
+                            default=0)
+    payment_status = fields.Selection(string='Payment Status*',
+                                      selection=payment_status_list,
+                                      required=True,
+                                      default='unpaid')
+
+    @api.onchange('volume', 'rate')
+    @api.depends('volume', 'rate')
+    def _compute_po_value(self):
+        for project in self:
+            project.po_value = (100 - 0) / 100 * project.volume * project.rate
