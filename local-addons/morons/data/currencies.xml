@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Currencies -->
+    <!-- Add currencies.xml to data to override base currency       -->
+    <record id="base.USD" model="res.currency">
+        <field name="active">1</field>
+    </record>
+
+    <record id="base.EUR" model="res.currency">
+        <field name="active">1</field>
+    </record>
+
+    <record id="base.VND" model="res.currency">
+        <field name="active">1</field>
+    </record>
+</odoo>

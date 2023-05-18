@@ -19,7 +19,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'project'],
+    'depends': ['base', 'project', 'account'],
 
     # always loaded
     'data': [
@@ -27,6 +27,9 @@
         'views/project.xml',
         'views/templates.xml',
         'data/languages.xml',
+        'data/currencies.xml',
+        'data/email_template.xml',
+        'data/company_data.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

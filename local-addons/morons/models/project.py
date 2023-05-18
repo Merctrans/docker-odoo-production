@@ -54,7 +54,7 @@ class MerctransProject(models.Model):
 
     work_unit = fields.Selection(string='Work Unit', selection=work_unit_list)
     volume = fields.Integer('Project Volume')
-    currency_id = fields.Many2one('res.currency', string='Currency')
+    currency_id = fields.Many2one("res.currency", string="Currency*", required=True, readonly=False)
     sale_rate = fields.Float('Sale Rate')
     job_value = fields.Monetary("Job Value",
                                 compute="_compute_job_value",

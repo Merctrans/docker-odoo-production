@@ -7,11 +7,16 @@
             <field name="model">project.project</field>
             <field name="inherit_id" ref="project.edit_project"/>
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='label_tasks']" position="attributes">
+                    <attribute name="placeholder">Task</attribute>
+                    <attribute name="readonly">True</attribute>
+                </xpath>
                 <xpath expr="//field[@name='label_tasks']" position = "after">
                     <field name="job_id"/>
-                    <field name="service" widget="many2many_tags"/>
-                    <field name="source_language"/>
-                    <field name="target_language"/>
+                    <field name="service" widget="many2many_tags" options="{'no_create': True}"/>
+                    <field name="currency_id"/>
+                    <field name="source_language" options="{'no_create': True}"/>
+                    <field name="target_language" options="{'no_create': True}"/>
                 </xpath>
                 <xpath expr="//field[@name='user_id']" position="after">
                     <field name="work_unit"/>
