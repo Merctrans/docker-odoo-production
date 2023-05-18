@@ -1,0 +1,27 @@
+051823 - TODO:
+
+
+Project
+1 - Thay đổi vị trí layout của Project Stage giống với Task
+2 - Không cho phép edit ngay trong field (disable write)
+3 - List task ngay trong Project
+4 - Bỏ trường Project Manager - Done
+5 - Hide label_tasks
+6 - Job ID auto gen, readonly
+7 - Thêm Currency: USD, EUR, VND (Thêm vào XML)
+8 - Sửa Domain của Customer: company_id = True
+9 - thêm trường Receivable in USD
+10 - Thêm trường Margin (Tính dựa vào value của task)
+11 - Thêm action tạo task ngay trong Project
+12 - View mặc định là list
+
+Task:
+1 - Hiện các trường như trong trello
+2 - Đặt placeholder cho task name
+3 - Hide Customer
+4 - Source language mặc định lấy từ Project
+5 - Đổi Deadline thành Start Date -> End Date
+6 - Thêm currency (lấy từ user)
+
+
+

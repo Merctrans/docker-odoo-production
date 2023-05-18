@@ -43,7 +43,7 @@ class MerctransProject(models.Model):
     job_id = fields.Integer('Job ID')
 
     # services contain tags
-    project_manager_id = fields.Many2one('res.users', string='Project Manager')
+
     service = fields.Many2many('merctrans.services', string='Services')
     source_language = fields.Many2one('res.lang', string='Source Language')
     target_language = fields.Many2one('res.lang', string='Target Language')

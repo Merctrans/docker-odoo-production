@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="base.lang_ja_JP" model="res.lang">
+        <field name="active">1</field>
+    </record>
+
+    <record id="base.lang_de" model="res.lang">
+        <field name="active">1</field>
+    </record>
+
+    <record id="base.lang_de" model="res.lang">
+        <field name="active">1</field>
+    </record>
+
+    <record id="base.lang_es" model="res.lang">
+        <field name="active">1</field>
+    </record>
+
+    <record id="base.lang_zh_CN" model="res.lang">
+        <field name="active">1</field>
+    </record>
+
+    <record id="base.lang_ko_KR" model="res.lang">
+        <field name="active">1</field>
+    </record>
+
+    <record id="base.lang_ja_JP" model="res.lang">
+        <field name="active">1</field>
+    </record>
+
+    <record id="base.lang_my" model="res.lang">
+        <field name="active">1</field>
+    </record>
+
+    <record id="base.lang_ar" model="res.lang">
+        <field name="active">1</field>
+    </record>
+
+    <record id="base.lang_ja_JP" model="res.lang">
+        <field name="active">1</field>
+    </record>
+
+    <record id="base.lang_th" model="res.lang">
+        <field name="active">1</field>
+    </record>
+
+    <record id="base.lang_id" model="res.lang">
+        <field name="active">1</field>
+    </record>
+
+    <record id="base.lang_vi_VN" model="res.lang">
+        <field name="active">1</field>
+    </record>
+
+    <record id="base.lang_pt" model="res.lang">
+        <field name="active">1</field>
+    </record>
+
+
+
+</odoo>

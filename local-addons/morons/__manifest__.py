@@ -26,6 +26,7 @@
         # 'security/ir.model.access.csv',
         'views/project.xml',
         'views/templates.xml',
+        'data/languages.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

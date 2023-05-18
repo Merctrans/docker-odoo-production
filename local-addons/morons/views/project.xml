@@ -8,7 +8,6 @@
             <field name="inherit_id" ref="project.edit_project"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='label_tasks']" position = "after">
-                    <field name="project_manager_id" widget="many2one_avatar_user"/>
                     <field name="job_id"/>
                     <field name="service" widget="many2many_tags"/>
                     <field name="source_language"/>
@@ -31,7 +30,6 @@
             <field name="inherit_id" ref="project.view_project"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='display_name']" position = "after">
-                    <field name="project_manager_id" widget="many2one_avatar_user"/>
                     <field name="job_id"/>
                     <field name="service" widget="many2many_tags"/>
                     <field name="source_language"/>
