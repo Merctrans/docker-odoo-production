@@ -108,6 +108,7 @@ class MerctransTask(models.Model):
 
     def _invert_get_source_lang(self):
         pass
+
     @api.onchange('volume', 'rate')
     @api.depends('volume', 'rate')
     def _compute_po_value(self):

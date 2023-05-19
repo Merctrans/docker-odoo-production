@@ -4,11 +4,11 @@
 Project
 1 - Thay đổi vị trí layout của Project Stage giống với Task
 2 - Không cho phép edit ngay trong field (disable write)
-3 - List task ngay trong Project
+3 - List task ngay trong Project - DONE
 4 - Bỏ trường Project Manager - Done
-5 - Hide label_tasks
+5 - Hide label_tasks - DONE
 6 - Job ID auto gen, readonly
-7 - Thêm Currency: USD, EUR, VND (Thêm vào XML)
+7 - Thêm Currency: USD, EUR, VND (Thêm vào XML) - DONE
 8 - Sửa Domain của Customer: company_id = True
 9 - thêm trường Receivable in USD
 10 - Thêm trường Margin (Tính dựa vào value của task)
@@ -18,7 +18,7 @@ Project
 Task:
 1 - Hiện các trường như trong trello
 2 - Đặt placeholder cho task name - Done
-3 - Hide Customer
+3 - Hide Customer - DONE
 4 - Source language mặc định lấy từ Project - DONE
 5 - Đổi Deadline thành Start Date -> End Date
 6 - Thêm currency (lấy từ user)
