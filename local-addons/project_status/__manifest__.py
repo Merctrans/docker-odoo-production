@@ -2,7 +2,7 @@
     "name": "Project Status",
     "summary": """
         Project Status""",
-    "author": "Patrick Wilson, Odoo Community Association (OCA)",
+    "author": "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/project",
     "category": "Project Management",
     "version": "15.0.1.0.0",
@@ -17,5 +17,4 @@
     ],
     "application": False,
     "development_status": "Beta",
-    "maintainers": ["patrickrwilson"],
 }

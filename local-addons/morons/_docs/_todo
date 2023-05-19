@@ -17,9 +17,9 @@ Project
 
 Task:
 1 - Hiện các trường như trong trello
-2 - Đặt placeholder cho task name
+2 - Đặt placeholder cho task name - Done
 3 - Hide Customer
-4 - Source language mặc định lấy từ Project
+4 - Source language mặc định lấy từ Project - DONE
 5 - Đổi Deadline thành Start Date -> End Date
 6 - Thêm currency (lấy từ user)
 
