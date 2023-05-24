@@ -9,7 +9,7 @@
         Long description of module's purpose
     """,
 
-    'author': "Joe Tang",
+    'author': ["Joe Tang", "Long Nguyen"],
     'website': "https://merctrans.vn",
 
     # Categories can be used to filter modules in modules listing
