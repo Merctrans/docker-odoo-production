@@ -30,6 +30,8 @@
         'data/currencies.xml',
         'data/email_template.xml',
         'data/company_data.xml',
+        'data/services.xml',
+        'data/tags.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

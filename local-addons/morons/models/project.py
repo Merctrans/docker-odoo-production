@@ -12,7 +12,7 @@ from odoo import models, fields, api
 
 class MercTransServices(models.Model):
     _name = 'merctrans.services'
-    _rec_name = 'services_names'
+    _rec_name = 'name'
     _description = 'Services offered by MercTrans'
 
     department_list = [('localization', 'Localization'),
@@ -20,7 +20,7 @@ class MercTransServices(models.Model):
                        ('development', 'Development')]
     department = fields.Selection(string="Department",
                                   selection=department_list)
-    services_names = fields.Char('Services')
+    name = fields.Char('Services')
 
 
 class MerctransProject(models.Model):

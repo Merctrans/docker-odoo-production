@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="tag_advertising" model="project.tags">
+            <field name="name">Advertising</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_adwords" model="project.tags">
+            <field name="name">Adwords</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_alibaba" model="project.tags">
+            <field name="name">Alibaba/Lazada/MTPE-related</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_audio" model="project.tags">
+            <field name="name">Audio Recording</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_automotive" model="project.tags">
+            <field name="name">Automotive</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_blockchain" model="project.tags">
+            <field name="name">Blockchain</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_book" model="project.tags">
+            <field name="name">Book</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_business" model="project.tags">
+            <field name="name">Business</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_construction" model="project.tags">
+            <field name="name">Construction</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_contract" model="project.tags">
+            <field name="name">Contract</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_cuisine" model="project.tags">
+            <field name="name">Cuisine</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_cultural" model="project.tags">
+            <field name="name">Cultural</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_energy" model="project.tags">
+            <field name="name">Energy</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_engineering" model="project.tags">
+            <field name="name">Engineering</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_fashion" model="project.tags">
+            <field name="name">Fashion</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_financial" model="project.tags">
+            <field name="name">Financial</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_gamble" model="project.tags">
+            <field name="name">Gamble</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_general" model="project.tags">
+            <field name="name">General</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_law" model="project.tags">
+            <field name="name">Governance/Law</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_hvac" model="project.tags">
+            <field name="name">HVAC</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_hr" model="project.tags">
+            <field name="name">Human Resource</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_it" model="project.tags">
+            <field name="name">IT/Software</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_internal" model="project.tags">
+            <field name="name">Internal</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_journalism" model="project.tags">
+            <field name="name">Journalism</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_legal" model="project.tags">
+            <field name="name">Legal</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_lit" model="project.tags">
+            <field name="name">Literature</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_manual" model="project.tags">
+            <field name="name">Manual</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_marketing" model="project.tags">
+            <field name="name">Marketing</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_maths" model="project.tags">
+            <field name="name">Maths</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_medical" model="project.tags">
+            <field name="name">Medical</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_movies" model="project.tags">
+            <field name="name">Movies and Films</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_sport" model="project.tags">
+            <field name="name">Sport</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_tech" model="project.tags">
+            <field name="name">Technology</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_tel" model="project.tags">
+            <field name="name">Telecommunication</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_tourism" model="project.tags">
+            <field name="name">Tourism</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_transcreation" model="project.tags">
+            <field name="name">Transcreation</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_game" model="project.tags">
+            <field name="name">Video Games</field>
+            <field name="color">8</field>
+        </record>
+        <record id="tag_web" model="project.tags">
+            <field name="name">Website</field>
+            <field name="color">8</field>
+        </record>
+    </data>
+</odoo>

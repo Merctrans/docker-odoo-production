@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="services_translation" model="merctrans.services">
+            <field name="name">Translation</field>
+            <field name="department">localization</field>
+        </record>
+
+        <record id="services_review" model="merctrans.services">
+            <field name="name">Review</field>
+            <field name="department">localization</field>
+        </record>
+        <record id="services_proofread" model="merctrans.services">
+            <field name="name">Proofread</field>
+            <field name="department">localization</field>
+        </record>
+        <record id="services_mtpe" model="merctrans.services">
+            <field name="name">MTPE</field>
+            <field name="department">localization</field>
+        </record>
+        <record id="services_vo" model="merctrans.services">
+            <field name="name">Voice Over</field>
+            <field name="department">localization</field>
+        </record>
+        <record id="services_subtitle" model="merctrans.services">
+            <field name="name">Subtitle</field>
+            <field name="department">localization</field>
+        </record>
+        <record id="services_transcription" model="merctrans.services">
+            <field name="name">Transcription</field>
+            <field name="department">localization</field>
+        </record>
+        <record id="services_tep" model="merctrans.services">
+            <field name="name">TEP</field>
+            <field name="department">localization</field>
+        </record>
+        <record id="services_dtp" model="merctrans.services">
+            <field name="name">DTP</field>
+            <field name="department">localization</field>
+        </record>
+        <record id="services_testing" model="merctrans.services">
+            <field name="name">Test</field>
+            <field name="department">localization</field>
+        </record>
+        <record id="services_qa" model="merctrans.services">
+            <field name="name">QA</field>
+            <field name="department">localization</field>
+        </record>
+    </data>
+
+
+</odoo>
