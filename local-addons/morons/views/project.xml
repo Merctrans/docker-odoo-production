@@ -33,6 +33,7 @@
                     <field name="discount"/>
                     <field name="job_value"/>
                     <field name="po_value"/>
+                    <field name="margin" widget="percentage"/>
                     <field name="payment_status"/>
                 </xpath>
                 <xpath expr="//field[@name='tag_ids']" position="attributes">

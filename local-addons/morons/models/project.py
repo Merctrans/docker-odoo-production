@@ -87,6 +87,7 @@ class MerctransProject(models.Model):
                                currency_field='currency_id',
                                store=True,
                                readonly=True)
+    margin = fields.Float("Project Margin", compute="_compute_margin", store=True, readonly=True)
 
     @api.model
     def create(self, vals):
@@ -109,6 +110,12 @@ class MerctransProject(models.Model):
         for project in self:
             if project.tasks:
                 project.po_value = sum(po.po_value for po in project.tasks)
+
+    @api.depends('po_value', 'job_value')
+    def _compute_margin(self):
+        for project in self:
+            if project.job_value and project.po_value:
+                project.margin = (project.job_value - project.po_value) / project.job_value
 
 
 class MerctransTask(models.Model):
