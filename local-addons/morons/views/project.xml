@@ -32,6 +32,7 @@
                     <field name="sale_rate"/>
                     <field name="discount"/>
                     <field name="job_value"/>
+                    <field name="po_value"/>
                     <field name="payment_status"/>
                 </xpath>
                 <xpath expr="//field[@name='tag_ids']" position="attributes">
