@@ -20,13 +20,8 @@
         <field name="type">form</field>
         <field name="arch" type="xml">
             <data>
-                <xpath expr="//field[@name='name']" position="after">
-                    <field
-                        name="project_status"
-                        widget="statusbar"
-                        options="{'clickable': '1', 'fold_field': 'fold'}"
-                        placeholder="Project Status"
-                    />
+                <xpath expr="//field[@name='stage_id']" position="after">
+                    <field name="project_status" widget="statusbar" options="{'clickable': '1', 'fold_field': 'fold'}" placeholder="Project Status" />
                 </xpath>
             </data>
         </field>
@@ -77,23 +72,11 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="after">
                 <separator />
-                <filter
-                    string="Not Closed"
-                    name="not_closed"
-                    domain="['|',('project_status.is_closed', '=', False),('project_status', '=', False)]"
-                />
-                <filter
-                    string="Closed"
-                    name="is_closed"
-                    domain="[('project_status.is_closed', '=', True)]"
-                />
+                <filter string="Not Closed" name="not_closed" domain="['|',('project_status.is_closed', '=', False),('project_status', '=', False)]" />
+                <filter string="Closed" name="is_closed" domain="[('project_status.is_closed', '=', True)]" />
             </xpath>
             <filter name="Partner" position="after">
-                <filter
-                    string="Status"
-                    name="project_status"
-                    context="{'group_by': 'project_status'}"
-                />
+                <filter string="Status" name="project_status" context="{'group_by': 'project_status'}" />
             </filter>
         </field>
     </record>
