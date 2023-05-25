@@ -6,7 +6,7 @@ services:
     depends_on:
       - db
     volumes:
-      - odoo-mercdev-web-data:/var/lib/odoo-mercdev-web-data
+      - odoo-mercdev-web-data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./local-addons:/mnt/extra-addons
     environment:
@@ -23,7 +23,7 @@ services:
       - POSTGRES_USER=odoo
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
-      - odoo-mercdev-db-data:/var/lib/postgresql/data/odoo-mercdev-db-data
+      - odoo-mercdev-db-data:/var/lib/postgresql/data/pgdata
     networks:
       - odoo-mercdev
   pgadmin:
@@ -34,7 +34,7 @@ services:
       PGADMIN_DEFAULT_PASSWORD: admin
       PGADMIN_CONFIG_SERVER_MODE: 'False'
     volumes:
-       - pgadmin-mercdev:/var/lib/pgadmin-mercdev
+      - pgadmin-mercdev:/var/lib/pgadmin
     ports:
       - 12433:80
     networks:
@@ -43,19 +43,18 @@ services:
   proxy:
     container_name: proxy-odoo
     depends_on:
-            - web
+      - web
     build:
-        context: .
-        dockerfile: Dockerfile-nginx
+      context: .
+      dockerfile: Dockerfile-nginx
     ports:
-        - "12069:8069"
+      - "12069:8069"
     networks:
       - odoo-mercdev
 
 networks:
   odoo-mercdev:
     driver: bridge
-
 
 volumes:
   odoo-mercdev-web-data:
