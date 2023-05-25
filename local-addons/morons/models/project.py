@@ -88,7 +88,6 @@ class MerctransProject(models.Model):
                                store=True,
                                readonly=True)
 
-
     @api.model
     def create(self, vals):
         if vals.get("job_id", "New") == "New":
@@ -102,7 +101,7 @@ class MerctransProject(models.Model):
     def _compute_job_value(self):
         for project in self:
             project.job_value = (
-                (100 - project.discount) / 100 * project.volume * project.sale_rate
+                    (100 - project.discount) / 100 * project.volume * project.sale_rate
             )
 
     @api.depends('tasks')
@@ -110,6 +109,8 @@ class MerctransProject(models.Model):
         for project in self:
             if project.tasks:
                 project.po_value = sum(po.po_value for po in project.tasks)
+
+
 class MerctransTask(models.Model):
     _inherit = "project.task"
 
