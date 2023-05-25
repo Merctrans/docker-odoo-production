@@ -102,5 +102,10 @@
                 </xpath>
             </field>
         </record>
+        <!-- MODIFY INHTERIT ACTION -->
+        <record id="project.open_view_project_all" model="ir.actions.act_window">
+            <field name="view_id" ref="project.view_project"/>
+
+        </record>
     </data>
 </odoo>
