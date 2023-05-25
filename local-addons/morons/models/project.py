@@ -65,13 +65,22 @@ class MerctransProject(models.Model):
     #                                   selection=project_status_list)
     payment_status = fields.Selection(string='Payment Status',
                                       selection=payment_status_list)
+    po_value = fields.Monetary("PO Value",
+                               compute="_compute_po_value",
+                               currency_field='currency_id',
+                               store=True,
+                               readonly=True)
 
     @api.depends('volume', 'sale_rate', 'discount')
     def _compute_job_value(self):
         for project in self:
             project.job_value = (100 - project.discount) / 100 * project.volume * project.sale_rate
 
-
+    @api.depends('tasks')
+    def _compute_po_value(self):
+        for project in self:
+            if project.tasks:
+                project.po_value = sum(po.po_value for po in project.tasks)
 class MerctransTask(models.Model):
     _inherit = 'project.task'
 
