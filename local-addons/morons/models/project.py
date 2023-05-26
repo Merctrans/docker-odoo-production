@@ -72,7 +72,7 @@ class MerctransProject(models.Model):
     )
     sale_rate = fields.Float("Sale Rate")
     job_value = fields.Monetary(
-        "Job Value",
+        "Project Value",
         compute="_compute_job_value",
         currency_field="currency_id",
         store=True,

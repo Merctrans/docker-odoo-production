@@ -19,6 +19,9 @@
                     <attribute name="placeholder">Task</attribute>
                     <attribute name="readonly">True</attribute>
                 </xpath>
+                <xpath expr="//field[@name='company_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
                 <xpath expr="//field[@name='label_tasks']" position="after">
                     <field name="job_id"/>
                     <field name="service" widget="many2many_tags" options="{'no_create': True}"/>
@@ -91,7 +94,6 @@
                 </xpath>
                 <xpath expr="//field[@name='partner_id']" position="after">
                     <field name="volume"/>
-                    <field name="po_value"/>
                     <field name="po_value"/>
                     <field name="payment_status"/>
                 </xpath>
