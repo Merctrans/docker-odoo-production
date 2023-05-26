@@ -148,7 +148,12 @@ class MerctransTask(models.Model):
         compute="_get_source_lang",
         inverse="_invert_get_source_lang",
     )
-    target_language = fields.Many2one("res.lang", string="Target Language")
+    target_language = fields.Many2one(
+        "res.lang",
+        string="Target Language",
+        compute="_get_target_lang",
+        inverse="_invert_get_target_lang",
+    )
     volume = fields.Integer(string="Volume*", required=True, default=0)
     po_value = fields.Float(
         "PO Value", compute="_compute_po_value", store=True, readonly=True, default=0
@@ -163,6 +168,9 @@ class MerctransTask(models.Model):
     def _invert_get_source_lang(self):
         pass
 
+    def _invert_get_target_lang(self):
+        pass
+
     @api.onchange("volume", "rate")
     @api.depends("volume", "rate")
     def _compute_po_value(self):
@@ -174,3 +182,7 @@ class MerctransTask(models.Model):
         for task in self:
             if self.project_id:
                 self.source_language = self.project_id.source_language
+
+    def _get_target_lang(self):
+        if self.project_id:
+            self.target_language = self.project_id.target_language
