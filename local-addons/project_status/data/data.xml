@@ -1,21 +1,37 @@
 <odoo noupdate="1">
-    <record id="project_status_pending" forcecreate="False" model="project.status">
-        <field name="name">Pending</field>
+    <record id="project_status_potential" forcecreate="False" model="project.status">
+        <field name="name">Potential</field>
         <field name="company_id" eval="False" />
         <field
             name="description"
-        >Project is new and being built. Has not been started yet.</field>
+        >Potential Project, not in production.</field>
+    </record>
+    <record id="project_status_confirmed" forcecreate="False" model="project.status">
+        <field name="name">Confirmed</field>
+        <field name="company_id" eval="False" />
+        <field
+            name="description"
+        >Project is confirmed by client.</field>
     </record>
     <record id="project_status_in_progress" forcecreate="False" model="project.status">
         <field name="name">In Progress</field>
         <field name="company_id" eval="False" />
-        <field
-            name="description"
-        >Project is currently initiated and being worked.</field>
+        <field name="description">Project has been confirmed and put to production.</field>
     </record>
-    <record id="project_status_complete" forcecreate="False" model="project.status">
-        <field name="name">Complete</field>
+
+    <record id="project_status_pending_qa" forcecreate="False" model="project.status">
+        <field name="name">Pending QA</field>
         <field name="company_id" eval="False" />
-        <field name="description">Project has been completed.</field>
+        <field name="description">Project has been completed and waiting for QA.</field>
+    </record>
+    <record id="project_status_delivered" forcecreate="False" model="project.status">
+        <field name="name">Delivered</field>
+        <field name="company_id" eval="False" />
+        <field name="description">Project has been delivered to client.</field>
+    </record>
+    <record id="project_status_cancelled" forcecreate="False" model="project.status">
+        <field name="name">Cancelled</field>
+        <field name="company_id" eval="False" />
+        <field name="description">Project has been cancelled.</field>
     </record>
 </odoo>
