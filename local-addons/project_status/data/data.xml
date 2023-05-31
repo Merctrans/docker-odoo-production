@@ -18,7 +18,6 @@
         <field name="company_id" eval="False" />
         <field name="description">Project has been confirmed and put to production.</field>
     </record>
-
     <record id="project_status_pending_qa" forcecreate="False" model="project.status">
         <field name="name">Pending QA</field>
         <field name="company_id" eval="False" />
