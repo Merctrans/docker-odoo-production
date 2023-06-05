@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="tutorial_restaurant_users" model="ir.actions.act_window">
+        <field name="name">Odoo Restaurant</field>
+        <field name="res_model">tutorial.users</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record model="ir.ui.view" id="tutorial_user_view_tree">
+        <field name="name">Entry Transaction Tree View</field>
+        <field name="model">tutorial.users</field>
+        <field name="arch" type="xml">
+            <tree name="User Records">
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="email"/>
+                <field name="password"/>
+                <field name="department" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="tutorial_user_view_form">
+        <field name="name">Entry Transaction Form View</field>
+        <field name="model">tutorial.users</field>
+        <field name="arch" type="xml">
+            <form string="Restaurant User">
+                <group>
+                    <group>
+                        <field name="first_name"/>
+                        <field name="last_name"/>
+                    </group>
+                    <group>
+                        <field name="email"/>
+                        <field name="password"/>
+                        <field name="department" widget="many2many_tags"/>
+                    </group>
+                </group>
+
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="tutorial_restaurant_root"
+              name="Odoo Restaurant"
+              sequence="10"/>
+
+    <menuitem id="restaurant_user"
+              name="Users"
+              action="tutorial_restaurant_users"
+              parent="tutorial_restaurant_root"
+              sequence="10"/>
+</odoo>
