@@ -89,7 +89,7 @@ class MerctransProject(models.Model):
                                readonly=True)
     margin = fields.Float("Project Margin", compute="_compute_margin", store=True, readonly=True)
     receivable = fields.Monetary("Receivable", compute="_compute_receivable")
-    receivable_in_USD = fields.Monte
+    # receivable_in_USD = fields.Monte
 
     @api.model
     def create(self, vals):
