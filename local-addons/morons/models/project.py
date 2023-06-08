@@ -88,6 +88,8 @@ class MerctransProject(models.Model):
                                store=True,
                                readonly=True)
     margin = fields.Float("Project Margin", compute="_compute_margin", store=True, readonly=True)
+    receivable = fields.Monetary("Receivable", compute="_compute_receivable")
+    receivable_in_USD = fields.Monte
 
     @api.model
     def create(self, vals):
@@ -116,6 +118,14 @@ class MerctransProject(models.Model):
         for project in self:
             if project.job_value and project.po_value:
                 project.margin = (project.job_value - project.po_value) / project.job_value
+
+    @api.depends('po_value', 'job_value')
+    def _compute_receivable(self):
+        for project in self:
+            if project.po_value and project.job_value:
+                project.receivable = project.job_value - project.po_value
+            else:
+                project.receivable = 0
 
 
 class MerctransTask(models.Model):
