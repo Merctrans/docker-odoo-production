@@ -59,7 +59,7 @@ class MerctransProject(models.Model):
 
     service = fields.Many2many("merctrans.services", string="Services")
     source_language = fields.Many2one("res.lang", string="Source Language")
-    target_language = fields.Many2one("res.lang", string="Target Language")
+    target_language = fields.Many2many("res.lang", string="Target Language")
     discount = fields.Integer("Discount (%)")
 
     # add discount field
@@ -161,8 +161,6 @@ class MerctransTask(models.Model):
     target_language = fields.Many2one(
         "res.lang",
         string="Target Language",
-        compute="_get_target_lang",
-        inverse="_invert_get_target_lang",
     )
     volume = fields.Integer(string="Volume*", required=True, default=0)
     po_value = fields.Float(
@@ -174,6 +172,8 @@ class MerctransTask(models.Model):
         required=True,
         default="unpaid",
     )
+
+    currency = fields.Char('Currency', compute='_compute_currency_id')
 
     def _invert_get_source_lang(self):
         pass
@@ -193,6 +193,8 @@ class MerctransTask(models.Model):
             if self.project_id:
                 self.source_language = self.project_id.source_language
 
-    def _get_target_lang(self):
-        if self.project_id:
-            self.target_language = self.project_id.target_language
+    @api.onchange("user_ids")
+    def _compute_currency_id(self):
+        for record in self:
+            if record.user_ids:
+                record.currency = record.user_ids.currency.name

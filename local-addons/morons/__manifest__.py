@@ -25,7 +25,7 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/project.xml',
-        'views/templates.xml',
+        'views/user.xml',
         'data/languages.xml',
         'data/currencies.xml',
         'data/email_template.xml',

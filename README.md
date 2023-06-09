@@ -32,6 +32,13 @@ docker exec -it web-odoo bash
 psql -U odoo odoo
 
 ```
+
+Update Module in Terminal via Docker
+```
+docker exec -it web-odoo-morons bash
+# /usr/bin/odoo -d odoo -u all --no-http
+
+```
 ## pgadmin4 - Manage your odoo database in browser
 connect pgadmin4 - port 5433 **localhost:5433**
 **Create new server** \

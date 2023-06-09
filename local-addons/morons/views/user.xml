@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record id="merctrans_user_view_form" model="ir.ui.view">
+            <field name="name">merctrans.project.user.view.inherit</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+<!--                <xpath expr="//field[@name='login']" position="after">-->
+<!--                    <field name="contributor"/>-->
+<!--                    <field name="currency"/>-->
+<!--                </xpath>-->
+                <notebook position="inside">
+                    <page string="MercTrans Preferences" name="merctrans_preferences">
+                        <field name="contributor">Contributor</field>
+                        <field name="currency">Currency</field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>

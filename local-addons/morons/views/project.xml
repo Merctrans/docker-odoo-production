@@ -9,7 +9,7 @@
             <field name="padding">5</field>
             <field name="company_id" eval="False"/>
         </record>
-        <!--PROJECT VIEW-->
+        <!--PROJECT VIEW FORM-->
         <record id="merctrans_project_view_form" model="ir.ui.view">
             <field name="name">merctrans.project.form.view.inherit</field>
             <field name="model">project.project</field>
@@ -27,7 +27,7 @@
                     <field name="service" widget="many2many_tags" options="{'no_create': True}"/>
                     <field name="currency_id"/>
                     <field name="source_language" options="{'no_create': True}"/>
-                    <field name="target_language" options="{'no_create': True}"/>
+                    <field name="target_language" options="{'no_create': True}" widget="many2many_tags"/>
                 </xpath>
                 <xpath expr="//field[@name='user_id']" position="after">
                     <field name="work_unit"/>
@@ -86,6 +86,9 @@
             <field name="model">project.task</field>
             <field name="inherit_id" ref="project.view_task_form2"/>
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='project_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
                 <xpath expr="//field[@name='user_ids']" position="after">
                     <field name="rate"/>
                     <field name="service" widget="many2many_tags"/>
@@ -95,6 +98,7 @@
                 <xpath expr="//field[@name='partner_id']" position="after">
                     <field name="volume"/>
                     <field name="po_value"/>
+                    <field name="currency"/>
                     <field name="payment_status"/>
                 </xpath>
                 <xpath expr="//field[@name='partner_id']" position="attributes">
@@ -108,7 +112,6 @@
         <!-- MODIFY INHTERIT ACTION -->
         <record id="project.open_view_project_all" model="ir.actions.act_window">
             <field name="view_id" ref="project.view_project"/>
-
         </record>
     </data>
 </odoo>
