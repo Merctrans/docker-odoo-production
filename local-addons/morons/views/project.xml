@@ -20,6 +20,7 @@
                     <attribute name="readonly">True</attribute>
                 </xpath>
                 <xpath expr="//field[@name='company_id']" position="attributes">
+                    <attribute name="required">False</attribute>
                     <attribute name="invisible">True</attribute>
                 </xpath>
                 <xpath expr="//field[@name='label_tasks']" position="after">
@@ -31,8 +32,8 @@
                 </xpath>
                 <xpath expr="//field[@name='user_id']" position="after">
                     <field name="work_unit"/>
-                    <field name="volume"/>
-                    <field name="sale_rate"/>
+                    <field name="volume" widget="char"/>
+                    <field name="sale_rate" widget="char"/>
                     <field name="discount"/>
                     <field name="job_value"/>
                     <field name="po_value"/>
@@ -68,7 +69,7 @@
                     <field name="job_id"/>
                     <field name="service" widget="many2many_tags"/>
                     <field name="source_language"/>
-                    <field name="target_language"/>
+                    <field name="target_language" widget="many2many_tags"/>
                     <field name="work_unit"/>
                     <field name="volume"/>
                     <field name="sale_rate"/>
