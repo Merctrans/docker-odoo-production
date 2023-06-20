@@ -18,8 +18,9 @@
                 <xpath expr="//field[@name='label_tasks']" position="attributes">
                     <attribute name="placeholder">Task</attribute>
                     <attribute name="readonly">True</attribute>
+                    <attribute name="invisible">True</attribute>
                 </xpath>
-                <xpath expr="//field[@name='company_id']" position="attributes">
+                <xpath expr="(//field[@name='company_id'])[2]" position="attributes">
                     <attribute name="required">False</attribute>
                     <attribute name="invisible">True</attribute>
                 </xpath>
@@ -49,6 +50,7 @@
                             <tree>
                                 <field name="user_ids" optional="show" widget="many2many_avatar_user" domain="[('share', '=', False), ('active', '=', True)]" options="{'no_quick_create': True}"/>
                                 <field name="rate"/>
+                                <field name="work_unit"/>
                                 <field name="source_language" options="{'no_create': True}"/>
                                 <field name="target_language" options="{'no_create': True}"/>
                                 <field name="volume"/>
@@ -67,12 +69,13 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='display_name']" position="after">
                     <field name="job_id"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
                     <field name="service" widget="many2many_tags"/>
-                    <field name="source_language"/>
-                    <field name="target_language" widget="many2many_tags"/>
                     <field name="work_unit"/>
-                    <field name="volume"/>
+                    <field name="currency_id"/>
                     <field name="sale_rate"/>
+                    <field name="volume"/>
                     <field name="discount"/>
                     <field name="job_value"/>
                     <field name="payment_status"/>
@@ -94,7 +97,8 @@
                     <field name="rate"/>
                     <field name="service" widget="many2many_tags"/>
                     <field name="source_language"/>
-                    <field name="target_language"/>
+                    <field name="target_language" widget="many2many_tags"/>
+                    <field name="work_unit"/>
                 </xpath>
                 <xpath expr="//field[@name='partner_id']" position="after">
                     <field name="volume"/>

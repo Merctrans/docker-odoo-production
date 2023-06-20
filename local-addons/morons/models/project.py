@@ -88,7 +88,7 @@ class MerctransProject(models.Model):
                                store=True,
                                readonly=True)
     margin = fields.Float("Project Margin", compute="_compute_margin", store=True, readonly=True)
-    receivable = fields.Monetary("Receivable", compute="_compute_receivable")
+    # receivable = fields.Monetary("Receivable", compute="_compute_receivable")
     # receivable_in_USD = fields.Monte
 
     @api.model
@@ -158,10 +158,11 @@ class MerctransTask(models.Model):
         compute="_get_source_lang",
         inverse="_invert_get_source_lang",
     )
-    target_language = fields.Many2one(
+    target_language = fields.Many2many(
         "res.lang",
         string="Target Language",
     )
+    work_unit = fields.Selection(string="Work Unit", selection=work_unit_list, required=True)
     volume = fields.Integer(string="Volume*", required=True, default=0)
     po_value = fields.Float(
         "PO Value", compute="_compute_po_value", store=True, readonly=True, default=0
