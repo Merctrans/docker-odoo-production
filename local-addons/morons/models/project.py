@@ -199,3 +199,5 @@ class MerctransTask(models.Model):
         for record in self:
             if record.user_ids:
                 record.currency = record.user_ids.currency.name
+
+    
