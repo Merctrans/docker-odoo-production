@@ -45,16 +45,17 @@
                     <attribute name="options">{'no_quick_create': True, 'no_create_edit': True}</attribute>
                 </xpath>
                 <notebook position="inside">
-                    <page string="Tasks" name="tasks">
+                    <page string="Purchase Order" name="tasks">
                         <field name="tasks">
                             <tree>
                                 <field name="user_ids" optional="show" widget="many2many_avatar_user" domain="[('share', '=', False), ('active', '=', True)]" options="{'no_quick_create': True}"/>
-                                <field name="rate"/>
+                                <field name="service"/>
                                 <field name="work_unit"/>
-                                <field name="source_language" options="{'no_create': True}"/>
-                                <field name="target_language" options="{'no_create': True}"/>
-                                <field name="volume"/>
-                                <field name="po_value"/>
+                                <field name="volume" options="{'no_create': True}"/>
+                                <field name="rate" options="{'no_create': True}"/>
+                                <field name="date_deadline"/>
+                                <field name="stage_id"/>
+                                <field name="payment_status"/>
                             </tree>
                         </field>
                     </page>
@@ -69,6 +70,9 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='display_name']" position="after">
                     <field name="job_id"/>
+                </xpath>
+                <xpath expr="(//field[@name='company_id'])[1 ]" position="attributes">
+                    <attribute name="invisible">True</attribute>
                 </xpath>
                 <xpath expr="//field[@name='partner_id']" position="after">
                     <field name="service" widget="many2many_tags"/>
