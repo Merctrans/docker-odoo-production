@@ -1,5 +1,4 @@
 import datetime
-
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 import re
@@ -13,7 +12,7 @@ class InternalUser(models.Model):
     contributor = fields.Boolean(string='Contributor', default=False)
     active = fields.Boolean(string='Active', default=True)
     currency = fields.Many2one('res.currency', string='Currency')
-    rate = fields.float(string='Rate')
+    rate = fields.Float(string='Rate')
     skype = fields.Char(string='Skype')
     nationality = fields.Many2many('res.lang', required=True)
     country_of_residence = fields.Many2one('res.country', required=True)
