@@ -26,6 +26,7 @@ class MercTransServices(models.Model):
         department (fields.Selection): Field for selecting a department from the department_list.
         name (fields.Char): Field for the name of the service.
     """
+
     _name = "merctrans.services"
     _rec_name = "name"
     _description = "Services offered by MercTrans"
@@ -74,6 +75,7 @@ class MerctransProject(models.Model):
         _compute_margin(): Calculates the project margin.
         _compute_receivable(): Calculates the receivable of the project.
     """
+
     _inherit = ["project.project"]
 
     work_unit_list = [
@@ -142,7 +144,7 @@ class MerctransProject(models.Model):
 
     @api.model
     def create(self, vals):
-        '''Creates a new project.
+        """Creates a new project.
 
             This method creates a new project and assigns it a unique project ID. 
             It is automatically triggered when a new project is created.
@@ -152,7 +154,7 @@ class MerctransProject(models.Model):
 
             Returns:
                 project: The newly created project.
-        '''
+        """
         if vals.get("job_id", "New") == "New":
             vals["job_id"] = self.env["ir.sequence"].next_by_code(
                 "increment_project_id"
@@ -162,7 +164,7 @@ class MerctransProject(models.Model):
 
     @api.depends("volume", "sale_rate", "discount")
     def _compute_job_value(self):
-        '''Computes the job value of the project.
+        """Computes the job value of the project.
 
             Parameters:
                 volume: The volume of the project.
@@ -171,7 +173,7 @@ class MerctransProject(models.Model):
 
             Returns:
                 None: Updates the 'job_value' field of each project record with the calculated job value.
-        '''
+        """
         for project in self:
             project.job_value = (
                     (100 - project.discount) / 100 * project.volume * project.sale_rate
@@ -179,21 +181,21 @@ class MerctransProject(models.Model):
 
     @api.depends('tasks')
     def _compute_po_value(self):
-        '''Computes the total Purchase Order (PO) value of the project.
+        """Computes the total Purchase Order (PO) value of the project.
 
             Parameters:
                 tasks: The tasks associated with the project.
 
             Returns:
                 None: Updates the 'po_value' field of each project record with the calculated sum.
-        '''
+        """
         for project in self:
             if project.tasks:
                 project.po_value = sum(po.po_value for po in project.tasks)
 
     @api.depends('po_value', 'job_value')
     def _compute_margin(self):
-        '''Computes the margin of the project.
+        """Computes the margin of the project.
 
             Parameters:
                 po_value: The total PO value of the project.
@@ -201,14 +203,14 @@ class MerctransProject(models.Model):
 
             Returns:
                 None: Updates the 'margin' field of each project record with the calculated margin.
-        '''
+        """
         for project in self:
             if project.job_value and project.po_value:
                 project.margin = (project.job_value - project.po_value) / project.job_value
 
     @api.depends('po_value', 'job_value')
     def _compute_receivable(self):
-        '''Computes the receivable of the project.
+        """Computes the receivable of the project.
 
             Parameters:
                 po_value: The total PO value of the project.
@@ -216,7 +218,7 @@ class MerctransProject(models.Model):
 
             Returns:
                 None: Updates the 'receivable' field of each project record with the calculated receivable.
-        '''
+        """
         for project in self:
             if project.po_value and project.job_value:
                 project.receivable = project.job_value - project.po_value
