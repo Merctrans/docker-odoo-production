@@ -122,5 +122,21 @@
         <record id="project.open_view_project_all" model="ir.actions.act_window">
             <field name="view_id" ref="project.view_project"/>
         </record>
+
+        <!-- INTERNAL USER VIEW -->
+        <record id="action_open_res_users" model="ir.actions.act_window">
+            <field name="name">Internal Users</field>
+            <field name="res_model">res.users</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('share', '=', False)]</field>  <!-- Sets the domain to only show internal users -->
+        </record>
+
+        <!-- CREATION OF INTERNAL USER NAVBAR OPTION -->
+        <menuitem id="menu_res_users"
+                name="Internal Users"
+                parent="project.menu_main_pm"
+                action="action_open_res_users"
+                groups="base.group_system"
+                sequence="5"/>
     </data>
 </odoo>
